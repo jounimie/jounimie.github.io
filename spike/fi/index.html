@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-itunes-app" content="app-id=6760581159">
     <title>SPIKE - Vertical Ripple Battle</title>
 
     <!-- Favicon -->
@@ -140,9 +141,27 @@
         <!-- Hero Section -->
         <section class="pt-40 pb-20 px-6 min-h-[90vh] flex flex-col justify-center items-center text-center relative z-10">
             <div class="absolute inset-0 hero-gradient opacity-20 -z-10"></div>
-            
-            <!-- Game Logo -->
-            <img src="../spike-icon.png" alt="Spike Icon" class="app-icon w-32 h-32 md:w-40 md:h-40 mb-8" onerror="this.src='https://via.placeholder.com/160?text=SPIKE'">
+
+            <!-- Full-width Flex Wrapper with justify-between -->
+            <div class="w-full max-w-4xl flex flex-col sm:flex-row items-center justify-between gap-6 mb-20 px-4">
+                <!-- Game Logo (Pushed to Left) -->
+                <img src="../spike-icon.png" alt="Spike Icon" class="app-icon w-32 h-32 md:w-40 md:h-40" onerror="this.src='https://via.placeholder.com/160?text=SPIKE'">
+
+                <!-- App Store Button (Pushed to Right) -->
+                <a 
+                id="app-store-btn"
+                href="https://itunes.apple.com/app/id6760581159?ls=1&mt=8&uo=4" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="bg-white text-black px-8 py-4 rounded-2xl font-black flex items-center gap-3 transition hover:scale-105 inline-flex cursor-pointer"
+                >
+                    <i class="fa-brands fa-apple text-2xl"></i>
+                    <div class="text-left leading-tight">
+                        <div class="text-[10px] uppercase opacity-60">Available on the</div>
+                        <div class="text-lg">App Store</div>
+                    </div>
+                </a>
+            </div>
 
             <h2 class="text-5xl md:text-7xl font-black mb-6 leading-tight tracking-tight drop-shadow-lg">
                 Kaksi pelaajaa. Yksi näyttö. <br/>
@@ -153,15 +172,6 @@
             <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
                 Ota mittaa toisistanne nopeatempoisessa monikosketusköydenvedossa. Napauta puoltasi, lähetä aaltoja ja puske linja voittoon.
             </p>
-            <!-- <div class="flex flex-col sm:flex-row gap-4 mb-20">
-                <button class="bg-white text-black px-8 py-4 rounded-2xl font-black flex items-center gap-3 transition hover:scale-105">
-                    <i class="fa-brands fa-apple text-2xl"></i>
-                    <div class="text-left leading-tight">
-                        <div class="text-[10px] uppercase opacity-60">Available on the</div>
-                        <div class="text-lg">App Store</div>
-                    </div>
-                </button>
-            </div> -->
 
             <!-- Phone Screenshots -->
             <div class="flex justify-center gap-4 md:gap-8 max-w-6xl w-full">
@@ -249,7 +259,6 @@
     </main>
 
     <!-- Footer -->
-
     <footer class="border-t border-white/10 bg-black/80 backdrop-blur pt-12 pb-8 px-6 mt-auto">
         <div class="max-w-6xl mx-auto">
             <div class="flex flex-col sm:flex-row justify-between items-center gap-6">
@@ -290,6 +299,7 @@
     </footer>
 
     <script>
+        // Scroll animation observer
         const observerOptions = { threshold: 0.1 };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
