@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+    <script>
+        (function() {
+            // Get user's browser language setting
+            var userLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+            
+            // Define supported languages match your folders
+            var supportedLangs = ['en', 'fi'];
+            
+            // Extract the language code (e.g., 'fi-FI' becomes 'fi')
+            var primaryLang = userLang.split('-')[0];
+            
+            // Choose target language, defaulting to 'en'
+            var targetLang = supportedLangs.indexOf(primaryLang) !== -1 ? primaryLang : 'en';
+            
+            // Redirect to the language folder
+            window.location.replace('./' + targetLang + '/');
+        })();
+    </script>
+    <!-- Fallback meta refresh for users with JavaScript disabled -->
+    <noscript>
+        <meta http-equiv="refresh" content="0; url=./en/">
+    </noscript>
+</head>
+<body>
+    <p>Redirecting to <a href="./en/">English version</a>...</p>
+</body>
+</html>
